@@ -4,7 +4,7 @@
 %define		_status		beta
 %define		_pearname	%{_class}_%{_subclass}_Mobile
 Summary:	%{_pearname} - HTTP mobile user agent string parser
-Summary(pl):	%{_pearname} -
+Summary(pl):	%{_pearname} - analizator identyfikatora przeno¶nych przegl±darek HTTP
 Name:		php-pear-%{_pearname}
 Version:	0.3
 Release:	1
@@ -21,12 +21,18 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Net_UserAgent_Mobile parses HTTP_USER_AGENT strings of (mainly
 Japanese) mobile HTTP user agents. It'll be useful in page dispatching
 by user agents. This package was ported from Perl's HTTP::MobileAgent.
-See http://search.cpan.org/search?mode=module&query=HTTP-MobileAgent
-The author of the HTTP::MobileAgent module is Tatsuhiko Miyagawa
+See http://search.cpan.org/search?mode=module&query=HTTP-MobileAgent.
+The author of the HTTP::MobileAgent module is Tatsuhiko Miyagawa.
 
 This class has in PEAR status: %{_status}.
 
 %description -l pl
+Net_UserAgent_Mobile analizuje ³añcuchy HTTP_USER_AGENT (g³ównie
+japoñskich) przeno¶nych przegl±darek HTTP. Modu³ ten mo¿e byæ
+przydatny przy wysy³aniu stron w zale¿no¶ci od przegl±darki. Zosta³
+przeportowany z perlowego HTTP::MobileAgent - wiêcej informacji pod
+http://search.cpan.org/search?mode=module&query=HTTP-MobileAgent.
+Autorem modu³u HTTP::MobileAgent jest Tatsuhiko Miyagawa.
 
 Ta klasa ma w PEAR status: %{_status}.
 
