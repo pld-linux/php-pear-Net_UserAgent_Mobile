@@ -26,7 +26,7 @@ by user agents. This package was ported from Perl's HTTP::MobileAgent.
 See http://search.cpan.org/search?mode=module&query=HTTP-MobileAgent.
 The author of the HTTP::MobileAgent module is Tatsuhiko Miyagawa.
 
-This class has in PEAR status: %{_status}.
+In PEAR status of this package is: %{_status}.
 
 %description -l pl
 Net_UserAgent_Mobile analizuje ³añcuchy HTTP_USER_AGENT (g³ównie
