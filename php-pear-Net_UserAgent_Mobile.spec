@@ -7,12 +7,12 @@
 Summary:	%{_pearname} - HTTP mobile user agent string parser
 Summary(pl):	%{_pearname} - analizator identyfikatora przeno¶nych przegl±darek HTTP
 Name:		php-pear-%{_pearname}
-Version:	0.23.0
+Version:	0.25.0
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	10620f2ab7c847579341365ee95aa8a7
+# Source0-md5:	7f26ec24dbd083355fd554f701de1189
 URL:		http://pear.php.net/package/Net_UserAgent_Mobile/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
