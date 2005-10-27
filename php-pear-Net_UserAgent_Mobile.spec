@@ -9,6 +9,7 @@ Summary(pl):	%{_pearname} - analizator identyfikatora przeno¶nych przegl±darek H
 Name:		php-pear-%{_pearname}
 Version:	0.25.0
 Release:	2
+Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
