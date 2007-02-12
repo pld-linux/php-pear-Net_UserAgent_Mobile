@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}_Mobile
 
 Summary:	%{_pearname} - HTTP mobile user agent string parser
-Summary(pl):	%{_pearname} - analizator identyfikatora przeno∂nych przegl±darek HTTP
+Summary(pl.UTF-8):   %{_pearname} - analizator identyfikatora przeno≈õnych przeglƒÖdarek HTTP
 Name:		php-pear-%{_pearname}
 Version:	0.29.0
 Release:	1
@@ -31,19 +31,19 @@ The author of the HTTP::MobileAgent module is Tatsuhiko Miyagawa.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Net_UserAgent_Mobile analizuje ≥aÒcuchy HTTP_USER_AGENT (g≥Ûwnie
-japoÒskich) przeno∂nych przegl±darek HTTP. Modu≥ ten moøe byÊ
-przydatny przy wysy≥aniu stron w zaleøno∂ci od przegl±darki. Zosta≥
-przeportowany z perlowego HTTP::MobileAgent - wiÍcej informacji pod
+%description -l pl.UTF-8
+Net_UserAgent_Mobile analizuje ≈Ça≈Ñcuchy HTTP_USER_AGENT (g≈Ç√≥wnie
+japo≈Ñskich) przeno≈õnych przeglƒÖdarek HTTP. Modu≈Ç ten mo≈ºe byƒá
+przydatny przy wysy≈Çaniu stron w zale≈ºno≈õci od przeglƒÖdarki. Zosta≈Ç
+przeportowany z perlowego HTTP::MobileAgent - wiƒôcej informacji pod
 http://search.cpan.org/search?mode=module&query=HTTP-MobileAgent.
-Autorem modu≥u HTTP::MobileAgent jest Tatsuhiko Miyagawa.
+Autorem modu≈Çu HTTP::MobileAgent jest Tatsuhiko Miyagawa.
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
@@ -52,7 +52,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
