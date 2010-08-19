@@ -1,19 +1,18 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		Net
 %define		_subclass	UserAgent
-%define		_status		beta
+%define		_status		stable
 %define		_pearname	%{_class}_%{_subclass}_Mobile
-
 Summary:	%{_pearname} - HTTP mobile user agent string parser
 Summary(pl.UTF-8):	%{_pearname} - analizator identyfikatora przenośnych przeglądarek HTTP
 Name:		php-pear-%{_pearname}
-Version:	0.30.0
-Release:	3
+Version:	1.0.0
+Release:	1
 Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	b47d7ce95ee02aab2d07dae7baa49757
+# Source0-md5:	d8860255bc7fb05bd00a1c6f074daaf0
 URL:		http://pear.php.net/package/Net_UserAgent_Mobile/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -46,9 +45,9 @@ Ta klasa ma w PEAR status: %{_status}.
 Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
-AutoReq:	no
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoProv:	no
+AutoReq:	no
 
 %description tests
 Tests for PEAR::%{_pearname}.
@@ -67,13 +66,20 @@ install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
+	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
+fi
+
 %files
 %defattr(644,root,root,755)
-%doc install.log
+%doc install.log optional-packages.txt
 %dir %{php_pear_dir}/%{_class}/%{_subclass}/Mobile
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}/%{_subclass}/*.php
 %{php_pear_dir}/%{_class}/%{_subclass}/Mobile/*.php
+%dir %{php_pear_dir}/%{_class}/%{_subclass}/Mobile/DoCoMo
+%{php_pear_dir}/%{_class}/%{_subclass}/Mobile/DoCoMo/ScreenInfo.php
 
 %files tests
 %defattr(644,root,root,755)
