@@ -7,8 +7,7 @@ Summary:	%{_pearname} - HTTP mobile user agent string parser
 Summary(pl.UTF-8):	%{_pearname} - analizator identyfikatora przenośnych przeglądarek HTTP
 Name:		php-pear-%{_pearname}
 Version:	1.0.0
-Release:	1
-Epoch:		0
+Release:	2
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -16,9 +15,10 @@ Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 URL:		http://pear.php.net/package/Net_UserAgent_Mobile/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
-BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	rpmbuild(macros) >= 1.571
 Requires:	php-pear
 Requires:	php-pear-PEAR-core >= 1:1.4.3
+Suggests:	php-xml
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,7 +45,7 @@ Ta klasa ma w PEAR status: %{_status}.
 Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 AutoProv:	no
 AutoReq:	no
 
@@ -58,6 +58,9 @@ Testy dla PEAR::%{_pearname}.
 %prep
 %pear_package_setup
 
+# optional ext not reported properly. do it manually
+echo '%{name} can optionally use PHP extension "php-xml"' >> optional-packages.txt
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}
@@ -66,10 +69,8 @@ install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
-	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
-fi
+%post -p <lua>
+%pear_package_print_optionalpackages
 
 %files
 %defattr(644,root,root,755)
