@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		stable
 %define		_pearname	Net_UserAgent_Mobile
 Summary:	%{_pearname} - HTTP mobile user agent string parser
